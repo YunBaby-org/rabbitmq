@@ -4,7 +4,7 @@
   "product_name": "RabbitMQ",
   "product_version": "3.8.5",
   "users": [],
-  "vhosts": [{ "name": "user" }],
+  "vhosts": [{ "name": "user" }, {"name": "tracker"}],
   "permissions": [
     {
       "user": "guest",
