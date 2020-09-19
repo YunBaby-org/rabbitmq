@@ -67,6 +67,15 @@
       "arguments": {}
     },
     {
+      "name": "locating-server",
+      "vhost": "/",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
       "name": "dead-letter",
       "vhost": "/",
       "type": "topic",
@@ -83,6 +92,14 @@
       "destination": "monitor.dead-letter",
       "destination_type": "queue",
       "routing_key": "#",
+      "arguments": {}
+    },
+    {
+      "source": "locating-server",
+      "vhost": "/",
+      "destination": "monitor.locating-server",
+      "destination_type": "queue",
+      "routing_key": "*",
       "arguments": {}
     },
     {
