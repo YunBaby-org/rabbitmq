@@ -17,7 +17,19 @@
   "topic_permissions": [],
   "parameters": [],
   "global_parameters": [],
-  "policies": [],
+  "policies": [
+    {
+      "vhost": "/",
+      "name": "TrackerRequestQueuePolicy",
+      "pattern": "tracker.*.requests",
+      "apply-to": "queues",
+      "definition": {
+        "dead-letter-exchange": "dead-letter",
+        "message-ttl": 60000
+      },
+      "priority": 0
+    }
+  ],
   "queues": [
     {
       "name": "monitor.boundary",
